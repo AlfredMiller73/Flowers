@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>Flowers</Name>
+    <RootNamespace>Flowers</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+    <WebBrowserPort>9000</WebBrowserPort>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f87b08b5-2e8d-463d-99bf-652866908f64</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>Flowers.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <PythonRunWebServerCommandType />
+    <PythonDebugWebServerCommandType />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="blog\admin.py" />
+    <Compile Include="blog\apps.py" />
+    <Compile Include="blog\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="blog\migrations\__init__.py" />
+    <Compile Include="blog\models.py" />
+    <Compile Include="blog\tests.py" />
+    <Compile Include="blog\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="blog\views.py" />
+    <Compile Include="blog\__init__.py" />
+    <Compile Include="cart\admin.py" />
+    <Compile Include="cart\apps.py" />
+    <Compile Include="cart\cart.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cart\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cart\migrations\__init__.py" />
+    <Compile Include="cart\models.py" />
+    <Compile Include="cart\tests.py" />
+    <Compile Include="cart\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cart\views.py" />
+    <Compile Include="cart\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="Flowers\__init__.py" />
+    <Compile Include="Flowers\settings.py" />
+    <Compile Include="Flowers\urls.py" />
+    <Compile Include="Flowers\wsgi.py" />
+    <Compile Include="mixins\admin_image_size.py" />
+    <Compile Include="order\admin.py" />
+    <Compile Include="order\apps.py" />
+    <Compile Include="order\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="order\migrations\__init__.py" />
+    <Compile Include="order\models.py" />
+    <Compile Include="order\tests.py" />
+    <Compile Include="order\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="order\views.py" />
+    <Compile Include="order\__init__.py" />
+    <Compile Include="product\admin.py" />
+    <Compile Include="product\apps.py" />
+    <Compile Include="product\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="product\migrations\__init__.py" />
+    <Compile Include="product\models.py" />
+    <Compile Include="product\tests.py" />
+    <Compile Include="product\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="product\views.py" />
+    <Compile Include="product\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\assets\" />
+    <Folder Include="app\static\app\assets\css\" />
+    <Folder Include="app\static\app\assets\fonts\" />
+    <Folder Include="app\static\app\assets\img\" />
+    <Folder Include="app\static\app\assets\img\banner\" />
+    <Folder Include="app\static\app\assets\img\bg\" />
+    <Folder Include="app\static\app\assets\img\blog\" />
+    <Folder Include="app\static\app\assets\img\brand-logo\" />
+    <Folder Include="app\static\app\assets\img\cart\" />
+    <Folder Include="app\static\app\assets\img\icon-img\" />
+    <Folder Include="app\static\app\assets\img\instagram\" />
+    <Folder Include="app\static\app\assets\img\logo\" />
+    <Folder Include="app\static\app\assets\img\product-details\" />
+    <Folder Include="app\static\app\assets\img\product\" />
+    <Folder Include="app\static\app\assets\img\slider\" />
+    <Folder Include="app\static\app\assets\img\team\" />
+    <Folder Include="app\static\app\assets\img\testimonial\" />
+    <Folder Include="app\static\app\assets\js\" />
+    <Folder Include="app\static\app\assets\js\vendor\" />
+    <Folder Include="app\static\app\assets\php\" />
+    <Folder Include="app\static\app\assets\scss\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="blog\" />
+    <Folder Include="blog\migrations\" />
+    <Folder Include="blog\templates\" />
+    <Folder Include="blog\templates\blog\" />
+    <Folder Include="cart\" />
+    <Folder Include="cart\migrations\" />
+    <Folder Include="cart\templates\" />
+    <Folder Include="cart\templates\cart\" />
+    <Folder Include="Flowers\" />
+    <Folder Include="mixins\" />
+    <Folder Include="media\" />
+    <Folder Include="order\" />
+    <Folder Include="order\migrations\" />
+    <Folder Include="order\templates\" />
+    <Folder Include="order\templates\admin\" />
+    <Folder Include="order\templates\order\" />
+    <Folder Include="product\" />
+    <Folder Include="product\migrations\" />
+    <Folder Include="product\templates\" />
+    <Folder Include="product\templates\product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\static\app\assets\css\bootstrap.min.css" />
+    <Content Include="app\static\app\assets\css\icons.min.css" />
+    <Content Include="app\static\app\assets\css\plugins.css" />
+    <Content Include="app\static\app\assets\css\style.css" />
+    <Content Include="app\static\app\assets\css\_variabls.css" />
+    <Content Include="app\static\app\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="app\static\app\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="app\static\app\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="app\static\app\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="app\static\app\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="app\static\app\assets\fonts\FontAwesome.otf" />
+    <Content Include="app\static\app\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="app\static\app\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="app\static\app\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="app\static\app\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="app\static\app\assets\img\banner\banner-1.jpg" />
+    <Content Include="app\static\app\assets\img\banner\banner-10.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-11.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-12.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-13.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-14.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-15.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-16.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-17.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-18.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-19.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-2.jpg" />
+    <Content Include="app\static\app\assets\img\banner\banner-20.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-21.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-22.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-23.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-24.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-25.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-26.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-27.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-28.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-29.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-3.jpg" />
+    <Content Include="app\static\app\assets\img\banner\banner-30.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-31.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-32.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-33.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-34.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-35.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-36.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-37.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-38.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-39.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-4.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-40.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-41.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-42.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-43.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-44.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-45.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-46.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-47.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-48.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-49.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-5.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-50.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-51.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-52.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-53.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-54.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-55.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-56.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-57.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-58.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-59.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-6.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-60.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-61.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-62.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-63.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-64.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-65.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-66.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-67.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-68.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-69.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-7.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-70.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-71.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-72.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-73.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-74.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-75.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-76.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-77.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-78.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-79.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-8.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-80.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-81.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-82.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-83.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-84.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-85.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-86.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-87.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-88.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-89.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-9.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-90.png" />
+    <Content Include="app\static\app\assets\img\banner\banner-91.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-2.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-3.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-4.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-5.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-6.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-7.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-8.png" />
+    <Content Include="app\static\app\assets\img\banner\deal-9.png" />
+    <Content Include="app\static\app\assets\img\banner\deal.png" />
+    <Content Include="app\static\app\assets\img\bg\bg-1.jpg" />
+    <Content Include="app\static\app\assets\img\bg\bg-2.jpg" />
+    <Content Include="app\static\app\assets\img\bg\bg-3.jpg" />
+    <Content Include="app\static\app\assets\img\bg\bg-4.jpg" />
+    <Content Include="app\static\app\assets\img\bg\bg-5.jpg" />
+    <Content Include="app\static\app\assets\img\bg\bg-6.jpg" />
+    <Content Include="app\static\app\assets\img\bg\bg-7.jpg" />
+    <Content Include="app\static\app\assets\img\bg\pattern-1.png" />
+    <Content Include="app\static\app\assets\img\bg\section-bg-1.png" />
+    <Content Include="app\static\app\assets\img\bg\section-bg-2.png" />
+    <Content Include="app\static\app\assets\img\bg\section-bg-3.png" />
+    <Content Include="app\static\app\assets\img\bg\snow1.png" />
+    <Content Include="app\static\app\assets\img\blog\blog-1.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-10.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-11.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-12.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-13.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-14.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-15.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-2.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-3.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-4.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-5.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-6.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-7.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-8.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-9.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-details-2.jpg" />
+    <Content Include="app\static\app\assets\img\blog\blog-details.jpg" />
+    <Content Include="app\static\app\assets\img\blog\comment-1.jpg" />
+    <Content Include="app\static\app\assets\img\blog\comment-2.jpg" />
+    <Content Include="app\static\app\assets\img\blog\comment-3.jpg" />
+    <Content Include="app\static\app\assets\img\blog\comment-4.jpg" />
+    <Content Include="app\static\app\assets\img\blog\sidebar-1.jpg" />
+    <Content Include="app\static\app\assets\img\blog\sidebar-2.jpg" />
+    <Content Include="app\static\app\assets\img\blog\sidebar-3.jpg" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-1.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-2.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-3.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-4.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-5.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-6.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-7.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-8.png" />
+    <Content Include="app\static\app\assets\img\brand-logo\barnd-logo-9.png" />
+    <Content Include="app\static\app\assets\img\cart\cart-1.png" />
+    <Content Include="app\static\app\assets\img\cart\cart-2.png" />
+    <Content Include="app\static\app\assets\img\icon-img\13.png" />
+    <Content Include="app\static\app\assets\img\icon-img\14.png" />
+    <Content Include="app\static\app\assets\img\icon-img\2.png" />
+    <Content Include="app\static\app\assets\img\icon-img\cart.png" />
+    <Content Include="app\static\app\assets\img\icon-img\headphone-4.png" />
+    <Content Include="app\static\app\assets\img\icon-img\medical-contact-shape.png" />
+    <Content Include="app\static\app\assets\img\icon-img\medical-contact.png" />
+    <Content Include="app\static\app\assets\img\icon-img\money-4.png" />
+    <Content Include="app\static\app\assets\img\icon-img\select.png" />
+    <Content Include="app\static\app\assets\img\icon-img\shipping-4.png" />
+    <Content Include="app\static\app\assets\img\icon-img\slider-shape.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-1.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-10.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-11.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-12.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-13.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-2.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-3.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-4.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-5.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-6.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-7.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-8.png" />
+    <Content Include="app\static\app\assets\img\icon-img\support-9.png" />
+    <Content Include="app\static\app\assets\img\icon-img\suscribe.png" />
+    <Content Include="app\static\app\assets\img\icon-img\valentine-text.png" />
+    <Content Include="app\static\app\assets\img\instagram\1.jpg" />
+    <Content Include="app\static\app\assets\img\instagram\2.jpg" />
+    <Content Include="app\static\app\assets\img\instagram\3.jpg" />
+    <Content Include="app\static\app\assets\img\instagram\4.jpg" />
+    <Content Include="app\static\app\assets\img\instagram\5.jpg" />
+    <Content Include="app\static\app\assets\img\instagram\6.jpg" />
+    <Content Include="app\static\app\assets\img\loading.gif" />
+    <Content Include="app\static\app\assets\img\logo\logo-2.png" />
+    <Content Include="app\static\app\assets\img\logo\logo.png" />
+    <Content Include="app\static\app\assets\img\lotus.png" />
+    <Content Include="app\static\app\assets\img\product-details\b-large-1.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\b-large-2.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\b-large-3.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\large-1.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\large-2.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\large-3.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-bl1.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-bl2.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-bl3.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-bl4.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-bl5.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-l1.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-l2.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-l3.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-l4.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-l5.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s1.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s10.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s2.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s3.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s4.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s5.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s6.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s7.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s8.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\product-detalis-s9.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\small-1.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\small-2.jpg" />
+    <Content Include="app\static\app\assets\img\product-details\small-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\deal-hm14.png" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm10-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm11-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm13-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm14-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm14-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm14-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm14-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm15-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm17-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm18-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm19-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm19-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm19-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm19-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm2-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-1.png" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-11.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-12.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-2.png" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-3.png" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-4.png" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm20-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm21-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-1.png" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-11.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-12.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-2.png" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-3.png" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-4.png" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm22-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm23-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm24-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm25-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm25-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm25-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm25-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm26-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm27-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm28-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-11.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-12.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm29-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm3-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm31-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-11.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm33-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm4-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-11.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-12.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm5-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm6-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-11.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-12.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm8-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-cagi-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-cagi-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-cagi-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-10.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\hm9-pro-9.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-1-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-2-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-2.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-3-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-3.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-4-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-4.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-5-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-5.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-6-1.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-6.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-7.jpg" />
+    <Content Include="app\static\app\assets\img\product\pro-8.jpg" />
+    <Content Include="app\static\app\assets\img\product\quickview-l1.jpg" />
+    <Content Include="app\static\app\assets\img\product\quickview-l2.jpg" />
+    <Content Include="app\static\app\assets\img\product\quickview-l3.jpg" />
+    <Content Include="app\static\app\assets\img\product\quickview-s1.jpg" />
+    <Content Include="app\static\app\assets\img\product\quickview-s2.jpg" />
+    <Content Include="app\static\app\assets\img\product\quickview-s3.jpg" />
+    <Content Include="app\static\app\assets\img\slider\5.jpg" />
+    <Content Include="app\static\app\assets\img\slider\6.jpg" />
+    <Content Include="app\static\app\assets\img\slider\7.jpg" />
+    <Content Include="app\static\app\assets\img\slider\hm-11-1.png" />
+    <Content Include="app\static\app\assets\img\slider\hm-11-2.png" />
+    <Content Include="app\static\app\assets\img\slider\hm13-slider-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-1.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-11-1.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-11-2.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-2.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-24-1.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-25-1.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-3.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-33-1.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-33-2.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-4.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-5.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-6.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-7.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-hm1-2.png" />
+    <Content Include="app\static\app\assets\img\slider\single-slide-hm14-1.png" />
+    <Content Include="app\static\app\assets\img\slider\slider-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-10-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-10.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-11-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-11.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-19-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-19-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-2-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-20-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-21-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-21-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-22-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-22-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-23-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-24-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-26-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-27-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-28-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-28-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-29-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-3.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-31-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-32-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-4.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-5-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-5.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-6-1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-6-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-6.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-7.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-8-2.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-8.jpg" />
+    <Content Include="app\static\app\assets\img\slider\slider-9.jpg" />
+    <Content Include="app\static\app\assets\img\team\team-1.jpg" />
+    <Content Include="app\static\app\assets\img\team\team-2.jpg" />
+    <Content Include="app\static\app\assets\img\team\team-3.jpg" />
+    <Content Include="app\static\app\assets\img\team\team-4.jpg" />
+    <Content Include="app\static\app\assets\img\testimonial\1.jpg" />
+    <Content Include="app\static\app\assets\img\testimonial\2.jpg" />
+    <Content Include="app\static\app\assets\img\testimonial\testi-1.png" />
+    <Content Include="app\static\app\assets\img\testimonial\testi-2.png" />
+    <Content Include="app\static\app\assets\js\ajax-mail.js" />
+    <Content Include="app\static\app\assets\js\main.js" />
+    <Content Include="app\static\app\assets\js\plugins.js" />
+    <Content Include="app\static\app\assets\js\vendor\bootstrap.bundle.min.js" />
+    <Content Include="app\static\app\assets\js\vendor\jquery-3.5.1.min.js" />
+    <Content Include="app\static\app\assets\js\vendor\jquery-migrate-3.3.0.min.js" />
+    <Content Include="app\static\app\assets\js\vendor\modernizr-3.6.0.min.js" />
+    <Content Include="app\static\app\assets\php\mail.php" />
+    <Content Include="app\static\app\assets\scss\style.scss" />
+    <Content Include="app\static\app\assets\scss\_404.scss" />
+    <Content Include="app\static\app\assets\scss\_about.scss" />
+    <Content Include="app\static\app\assets\scss\_banner.scss" />
+    <Content Include="app\static\app\assets\scss\_blog-details.scss" />
+    <Content Include="app\static\app\assets\scss\_blog.scss" />
+    <Content Include="app\static\app\assets\scss\_brand-logo.scss" />
+    <Content Include="app\static\app\assets\scss\_breadcrumb.scss" />
+    <Content Include="app\static\app\assets\scss\_cart.scss" />
+    <Content Include="app\static\app\assets\scss\_checkout.scss" />
+    <Content Include="app\static\app\assets\scss\_common.scss" />
+    <Content Include="app\static\app\assets\scss\_contact.scss" />
+    <Content Include="app\static\app\assets\scss\_footer.scss" />
+    <Content Include="app\static\app\assets\scss\_header.scss" />
+    <Content Include="app\static\app\assets\scss\_instagram.scss" />
+    <Content Include="app\static\app\assets\scss\_login-register.scss" />
+    <Content Include="app\static\app\assets\scss\_my-account.scss" />
+    <Content Include="app\static\app\assets\scss\_product-details.scss" />
+    <Content Include="app\static\app\assets\scss\_product.scss" />
+    <Content Include="app\static\app\assets\scss\_section-title.scss" />
+    <Content Include="app\static\app\assets\scss\_shop.scss" />
+    <Content Include="app\static\app\assets\scss\_sidebar.scss" />
+    <Content Include="app\static\app\assets\scss\_slider.scss" />
+    <Content Include="app\static\app\assets\scss\_support.scss" />
+    <Content Include="app\static\app\assets\scss\_suscribe.scss" />
+    <Content Include="app\static\app\assets\scss\_testimonial.scss" />
+    <Content Include="app\static\app\assets\scss\_timers.scss" />
+    <Content Include="app\static\app\assets\scss\_variabls.scss" />
+    <Content Include="app\templates\app\registration.html" />
+    <Content Include="app\templates\app\userorders.html" />
+    <Content Include="blog\templates\blog\blog.html" />
+    <Content Include="blog\templates\blog\blogpost.html" />
+    <Content Include="cart\templates\cart\detail.html" />
+    <Content Include="order\templates\admin\detail.html" />
+    <Content Include="order\templates\order\create.html" />
+    <Content Include="order\templates\order\created.html" />
+    <Content Include="order\templates\order\pdf.html" />
+    <Content Include="product\templates\product\detail.html" />
+    <Content Include="product\templates\product\list.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

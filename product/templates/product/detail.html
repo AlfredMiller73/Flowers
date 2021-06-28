@@ -1,0 +1,139 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li><a href="/"><b>Главная</b></a></li>
+                <li><a href="{% url 'product:ProductList' %}"><b>Каталог</b></a></li>
+                <li><a href="{{ product.category.get_absolute_url }}"><b>{{ product.category }}</b></a></li>
+                <li class="active"><b>{{ product.name }}</b></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="shop-area pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="product-details dec-img-wrap">
+                    <img src="{{ product.image.url }}" alt="">
+                    <span>Новинка</span>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product-details-content ml-70">
+                    <h2>{{ product.name }}</h2>
+                    <div class="product-details-price">
+                        <span>от {{ product.price }} &#8381/шт</span>
+                    </div>
+                    <p>{{ product.description | linebreaksbr }}</p>
+                    {% if user.is_authenticated %}
+                    <div class="pro-details-quality">
+                        <form action="{% url "cart:CartAdd" product.id %}" method="post" class="quantity">
+					        {{ cart_product_form }}
+						    {% csrf_token %}
+					       <br /><br /><br />
+                        <div class="pro-details-cart btn-hover">
+                            <button type="submit" name="next" class="next action-button btn-hover" value="Next" >В корзину</button>
+                        </div>
+                        </form>
+                    </div>
+                    {% else %}
+    						<h3> Для добавления товара в корзину, пожалуйста, <a href="{% url 'login' %}">авторизуйтесь.</a></h3>
+                    {% endif %}
+                    <div class="pro-details-meta">
+                        <span><b>Категория : <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></b></span>
+                    </div>
+                    <div class="pro-details-social">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="description-review-area pb-90">
+    <div class="container">
+        <div class="description-review-wrapper">
+            <div class="description-review-topbar nav">
+                <a data-toggle="tab" href="#des-details1">Характеристики</a>
+                <a class="active" data-toggle="tab" href="#des-details2">Описание</a>
+                <a data-toggle="tab" href="#des-details3">Отзывы</a>
+            </div>
+            <div class="tab-content description-review-bottom">
+                <div id="des-details2" class="tab-pane active">
+                    <div class="product-description-wrapper">
+                        <p>{{ product.content | linebreaksbr }}</p>
+                        
+                    </div>
+                </div>
+                <div id="des-details1" class="tab-pane ">
+                    <div class="product-anotherinfo-wrapper">
+                        
+                    </div>
+                </div>
+                <div id="des-details3" class="tab-pane">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="review-wrapper">
+                                {% for review in reviews %}
+                                <div class="single-review">
+                                    <div class="review-img">
+                                        <img src="{% static 'app/assets/img/testimonial/1.jpg' %}" alt="">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top-wrap">
+                                            <div class="review-left">
+                                                <div class="review-name">
+                                                    <h4>{{review.author}} - {{review.date}}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-bottom">
+                                            <p>{{review.text | linebreaksbr}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div class="col-lg-5">
+                            <div class="ratting-form-wrapper pl-50">
+                                <h3>Добавить отзыв</h3>
+                                <div class="ratting-form">
+                                    <form action="" method="post">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="rating-form-style form-submit">
+                                                    <textarea name="text" required id="id_text" placeholder="Введите сообщение..."></textarea>
+                                                    <input type="submit" value="отправить">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+    						<h3> Для добавления своего отзыва, пожалуйста, <a href="{% url 'login' %}">авторизуйтесь.</a></h3>
+						{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

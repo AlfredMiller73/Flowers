@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ title }} - Лотус</title>
+
+    {% load staticfiles %}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'app/assets/img/lotus.png' %}" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'app/assets/css/bootstrap.min.css' %}">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'app/assets/css/icons.min.css' %}">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'app/assets/css/plugins.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'app/assets/css/style.css' %}">
+</head>
+
+<body>
+   <!-- Header-->
+     <header class="header-area sticky-bar header-padding-3 header-res-padding clearfix header-hm-7">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-6 col-md-4 col-2">
+                    <div class="clickable-menu clickable-mainmenu-active">
+                        <a href="#"><i class="pe-7s-menu"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-4 col-5">
+                    <div class="logo text-center logo-hm5">
+                        <a class="sticky-none" href="/">
+                            <h1 style="color: black"><b>Lotus</b></h1>
+                        </a>
+                        <a class="sticky-block" href="/">
+                            <h1 style="color: black"><b>Lotus</b></h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-4 col-md-4 col-5">
+                    <div class="header-right-wrap header-right-wrap-black">
+                        <div class="same-style account-satting">
+                            <a class="account-satting-active" href="#"><i class="pe-7s-user"></i></a>
+                            <div class="account-dropdown">
+                                <ul>
+                                    {% if user.is_authenticated %}
+                                    {% csrf_token %}
+                                    <li><a href="{% url 'userorders' %}">Мои заказы</a></li>
+                                    <li><a href="{% url 'logout' %}">Выйти</a></li>
+                                    {% else %}
+                                     <li><a href="{% url 'login' %}">Войти</a></li>
+                                     <li><a href="{% url 'registration' %}">Регистрация</a></li>
+                                    {% endif %}
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="same-style cart-wrap">
+                            {% if user.is_authenticated %}
+                            <button class="icon-cart">
+                                <i class="pe-7s-shopbag"></i>
+                                {% with total_items=cart|length %}
+								{% if cart|length > 0 %}
+                                <span class="count-style">{{ total_items }}</span>
+                                {% else %}
+                                <span class="count-style">0</span>
+                                {% endif %}
+								{% endwith %}
+                            </button>
+                            <div class="shopping-cart-content">
+                                <ul>
+                                    {% for item in cart %}
+                                    {% with product=item.product %}
+                                    <li class="single-shopping-cart">
+                                        <div class="shopping-cart-img">
+                                            <a href="{{ product.get_absolute_url }}"><img alt="" src="{{ product.image.url }}"></a>
+                                        </div>
+                                        <div class="shopping-cart-title">
+                                            <h4><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h4>
+                                            <h6>{{ item.quantity }}</h6>
+                                            <span>{{ product.price }} руб.</span>
+                                        </div>
+                                        <div class="shopping-cart-delete">
+                                            <a href="{% url 'cart:CartRemove' product.id %}"><i class="fa fa-times-circle"></i></a>
+                                        </div>
+                                    </li>
+                                    {% endwith %}
+                                    {% endfor %}
+                                </ul>
+                                <div class="shopping-cart-total">
+                                    <h4>Итого : <span class="shop-total">{{ item.total_price }} руб.</span></h4>
+                                </div>
+                                <div class="shopping-cart-btn btn-hover text-center">
+                                    <a class="default-btn" href="{% url 'cart:CartDetail' %}">Корзина</a>
+                                    {% if cart|length > 0 %}
+                                    <a class="default-btn" href="{% url 'order:OrderCreate' %}">Оформить</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="clickable-mainmenu">
+        <div class="clickable-mainmenu-icon">
+            <button class="clickable-mainmenu-close">
+                <span class="pe-7s-close"></span>
+            </button>
+        </div>
+        <div class="side-logo">
+            <a href="/">
+                <h1 style="color: black"><b>Lotus</b></h1>
+            </a>
+        </div>
+        <div id="menu" class="text-left clickable-menu-style">
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="{% url 'product:ProductList' %}">Каталог</a></li>
+                {% if user.is_authenticated %}
+				    <li><a href="{% url 'userorders' %}">Мои заказы</a></li>
+				{% endif %}
+                <li><a href="{% url 'blog:blog' %}">Новости</a></li>
+                <li><a href="{% url 'contact' %}">Контакты</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                
+                
+                <li><a href="https://goo.gl/maps/kxAvftW8gp64bUG2A">Адрес магазина</a></li>
+
+            </ul>
+        </div>
+        <div class="side-social">
+            <ul>
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+   
+
+{% block content %}{% endblock %}
+
+    <div class="instagram-area">
+        <div class="instagram-active owl-carousel">
+            <div class="single-instagram">
+                <a href="https://www.instagram.com/p/CQLv7YIgfLx/"><img src="{% static 'app/assets/img/instagram/1.jpg' %}" alt="instagram"></a>
+            </div>
+            <div class="single-instagram">
+                <a href="https://www.instagram.com/p/CQLkdB8gOY3/"><img src="{% static 'app/assets/img/instagram/2.jpg' %}" alt="instagram"></a>
+            </div>
+            <div class="single-instagram">
+                <a href="https://www.instagram.com/p/CQI2EB-gJw7/"><img src="{% static 'app/assets/img/instagram/3.jpg' %}" alt="instagram"></a>
+            </div>
+            <div class="single-instagram">
+                <a href="https://www.instagram.com/p/CQGGa9ggtf6/"><img src="{% static 'app/assets/img/instagram/4.jpg' %}" alt="instagram"></a>
+            </div>
+            <div class="single-instagram">
+                <a href="https://www.instagram.com/p/CQDwxpwAzT5/"><img src="{% static 'app/assets/img/instagram/5.jpg' %}" alt="instagram"></a>
+            </div>
+            <div class="single-instagram">
+                <a href="https://www.instagram.com/p/CP5YmWIAQV7/"><img src="{% static 'app/assets/img/instagram/6.jpg' %}" alt="instagram"></a>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="copyright mb-30">
+                        <div class="footer-logo">
+                            <a href="/">
+                                <h3><b>Lotus</b></h3>
+                            </a>
+                        </div>
+                        <br />
+                        <p>© 2021</p>
+                        <p>Все права защищены.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="footer-widget mb-30 ml-30">
+                        <div class="footer-title">
+                            <h3><b>Информация</b></h3>
+                        </div>
+                        <div class="footer-list">
+                            <ul>
+                                <li><a href="{% url 'about' %}">О нас</a></li>
+                                <li><a href="{% url 'contact' %}">Связаться</a></li>
+                                <li><a href="https://goo.gl/maps/kxAvftW8gp64bUG2A">Адрес магазина</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="footer-widget mb-30 ml-75">
+                        <div class="footer-title">
+                            <h3><b>Контакты</b></h3>
+                        </div>
+                        <div class="footer-list">
+                            <ul>
+                                <li><a href="#">+7 921 115 24 33</a></li>
+                                <li><a href="#">г. Чебоксары, пр-т Мира, 84</a></li>
+                                <li><a href="#">lotus@ya.ru</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ <!-- All JS is here
+============================================ -->   
+    
+<script src="{% static 'app/assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+<script src="{% static 'app/assets/js/vendor/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'app/assets/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>
+<script src="{% static 'app/assets/js/vendor/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'app/assets/js/plugins.js' %}"></script>
+<!-- Ajax Mail -->
+<script src="{% static 'app/assets/js/ajax-mail.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'app/assets/js/main.js' %}"></script>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

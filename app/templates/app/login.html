@@ -1,0 +1,53 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="/">Главная</a>
+                </li>
+                <li class="active">Личный кабинет </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="login-register-area pt-50 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <h2><b>Вход</b></h2>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="" method="post">
+                                       {% csrf_token %}
+                                        <input type="text" name="username" autofocus="" required="" id="id_username" placeholder="Введите e-mail *">
+                                        <input type="password" name="password" required="" id="id_password" placeholder="Пароль *">
+                                        <div class="button-box">
+                                            <div class="login-toggle-btn">
+                                                <input type="checkbox">
+                                                <label>Запомнить меня</label>
+                                                <a href="{% url 'registration' %}">Нет аккаунта?</a>
+                                            </div>
+                                            <button type="submit"><span>Войти</span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

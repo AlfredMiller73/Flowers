@@ -1,0 +1,105 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li><a href="/"><b>Главная</b></a></li>
+                <li><a href="{% url 'blog:blog' %}"><b>Новости</b></a></li>
+                <li class="active"><b>{{ post_id.title }}</b></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="Blog-area pt-100 pb-100">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="blog-details-wrapper ml-20">
+                    <div class="blog-details-top">
+                        <div class="blog-details-img">
+                            <img alt="" src="{{ post_id.image.url }}">
+                        </div>
+                        <div class="blog-details-content">
+                            <div class="blog-meta-2">
+                                <ul>
+                                    <li><kbd>{{ post_id.author }}  [{{ post_id.posted }}]</kbd></li>
+                                </ul>
+                            </div>
+                            <h3>{{ post_id.title }}</h3>
+                            <p>{{ post_id.content|linebreaksbr }}</p>
+                        </div>
+                    </div>
+                    <div class="tag-share">
+                        <div class="blog-share">
+                            <div class="share-social">
+                                <ul>
+                                    <li>
+                                        <a class="facebook" href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="twitter" href="#">
+                                        <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="instagram" href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-comment-wrapper mt-55">
+                        {% if comments %}
+                        <h4 class="blog-dec-title">комментарии :</h4>
+                        {% for comment in comments %}
+                        <div class="single-comment-wrapper mt-35">
+                            
+                            <div class="blog-comment-img">
+                                <img src="{% static 'app/assets/img/blog/comment-1.jpg' %}" alt="">
+                            </div>
+                            <div class="blog-comment-content">
+                                <h4>{{comment.author}}</h4>
+                                <span>{{comment.date}} </span>
+                                <p>{{comment.text|linebreaksbr}}</p>
+                            </div>
+                           
+                        </div>
+                         {% endfor %}
+                        {% else %}
+                       <h4 class="blog-dec-title">комментариев нет.</h4>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="blog-reply-wrapper mt-50">
+                    <h4 class="blog-dec-title">оставьте комментарий :</h4>
+                    <form class="blog-form" action="" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-leave">
+                                    <textarea name="text" required id="id_text" placeholder="Введите сообщение..."></textarea>
+                                    <input type="submit" value="Отправить">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+
+                    <h3 style="padding-top: 50px" class="blog-dec-title">Для добавления комментария, пожалуйста, <a href="{% url 'login' %}">авторизуйтесь.</a></h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
