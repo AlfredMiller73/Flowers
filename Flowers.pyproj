@@ -635,6 +635,8 @@
     <Content Include="app\static\app\assets\img\product\quickview-s1.jpg" />
     <Content Include="app\static\app\assets\img\product\quickview-s2.jpg" />
     <Content Include="app\static\app\assets\img\product\quickview-s3.jpg" />
+    <Content Include="app\static\app\assets\img\slider\1.jpg" />
+    <Content Include="app\static\app\assets\img\slider\2.jpg" />
     <Content Include="app\static\app\assets\img\slider\5.jpg" />
     <Content Include="app\static\app\assets\img\slider\6.jpg" />
     <Content Include="app\static\app\assets\img\slider\7.jpg" />
